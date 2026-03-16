@@ -1,0 +1,136 @@
+<html lang="en">
+<head>
+        
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>    
+</head>
+<body>
+<table> 
+        <tr> 
+        <td>
+    <h1 id="login" class="login-title">Login</h1>
+            
+    <p id=error-message style="display: none;"> X Incorrect username or password. </p>
+            
+<form>
+    <label for="username">Username</label><br/>
+    <input type="text" id="username" placeholder="Enter Username"/> <br/>
+    
+    <label for="password">Password</label><br/>
+    <input type="password" id="password" placeholder="Enter Password"/> <br/>
+    
+    <input type="checkbox" id="remember" name="remember"/>
+    <label for="remember">Remember me</label><br/>
+   
+    <button type="button" id="buttonID" onclick="checkLogin()">Submit</button>
+    <button type="button" id="buttonC" onclick="clearForm()">Cancel</button>
+    
+    </form>
+            
+     </td>
+     </tr>   
+    </table>
+    
+    
+    <style>
+        /*background image*/ 
+        body{
+        background-image:url('pastels%20bg.jpg');
+        background-size: cover;
+        }   
+       
+        body{text-align: center;}
+        form{padding: 200px;}
+        table{
+         width: 50%;
+         margin: 60px auto;
+         border: 5px solid black;
+         border-radius: 25px;
+         padding: 50px;
+         text-align: center;
+        }
+        /*table settings*/
+        table{
+            width: 400px;
+            height: 200px;
+            border-collapse: collapse;
+            background-image:url(sunoo.jpg);
+            background-size: cover;
+        }
+        /*Cancel button*/
+        #buttonC:hover{
+            padding:15px;
+            border-radius:10px;
+            background-color:brown;   
+        }
+        #buttonC{
+            padding:15px;
+            border-radius:10px;
+            background-color:red;
+        }
+        /*Submit button*/
+        #buttonID:hover{
+            padding:15px;
+            border-radius:10px;
+            background-color:darkgreen;
+        }
+         
+        #buttonID{
+            padding:15px;
+            border-radius:10px;
+            background-color:green;
+       }
+        /*body settings*/
+        body{
+            font-family:fantasy,serif;
+            background-color: cadetblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        #username:hover, #password:hover, #remember:hover;{
+         transform:scale(1.01);   
+        }
+         
+             
+    </style>
+        <script>
+         /*STEP 1: set your correct username &password*/
+            var correctUsername = "admin";
+            var correctPassword = "1234";
+            var correctUsername = "sunoo";
+            var correctPassword = "neyaa";
+        /*STEP 2: this function runs when submit is clicked*/
+            function checkLogin(){
+        /* read whatever the user typed into each field*/
+            var enteredUsername = document.getElementById("username").value;
+            var enteredPassword = document.getElementById("password").value;
+        /*compare what the user typed with the correct values*/
+            if (enteredUsername === correctUsername && enteredPassword === correctPassword){
+        /*if password and username is correct, got to aboutme.html*/
+            window.location.href = "aboutme.html";
+            } else {
+        /*if the password and username is wrong, show the error message*/
+            document.getElementById("error-message").style.display = "block";
+            }
+        }
+         
+         //STEP 3: cancel button clears the form
+            function clearForm(){
+             document.getElementById("username").value = "";
+             document.getElementById("password").value = "";
+             document.getElementById("error-message").style.display = "none";
+                
+            }
+            
+        </script>
+    
+    
+   
+    </body>
+    </html>
+    
